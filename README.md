@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nerds-odd-e/bbuddy.svg?branch=master)](https://travis-ci.org/nerds-odd-e/bbuddy)
+[![Build Status](https://travis-ci.org/bbuddies/bbuddy-20160725.svg?branch=training)](https://travis-ci.org/bbuddies/bbuddy-20160725)
 
 This is the repo for the exercise project to be developed in Shanghai team's Modern Web Development course
 
