@@ -24,6 +24,9 @@ public class AccountStatusImpl {
         return iterable;
     }
 
+    public void saveAccountStatus(AccountStatus accountStatus){
+        accountStatusRepo.save(accountStatus);
+    }
 
 }
 
