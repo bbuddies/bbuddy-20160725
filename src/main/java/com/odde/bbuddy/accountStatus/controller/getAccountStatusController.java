@@ -27,7 +27,7 @@ public class getAccountStatusController {
         return "AccountStatus";
     }
 
-    @RequestMapping("/get_accountStatus")
+    @RequestMapping("/save_accountStatus")
     public String saveAccountStatus(AccountStatus accountStatus, Model model) {
 
 
