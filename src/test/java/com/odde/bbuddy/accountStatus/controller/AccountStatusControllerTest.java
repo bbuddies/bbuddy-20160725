@@ -2,33 +2,40 @@ package com.odde.bbuddy.accountStatus.controller;
 
 import com.odde.bbuddy.accountStatus.AccountStatus;
 import com.odde.bbuddy.accountStatus.AccountStatusImpl;
-import com.odde.bbuddy.budget.BudgetCategoryImpl;
-import com.odde.bbuddy.budget.MonthlyBudget;
-import com.odde.bbuddy.budget.MonthlyBudgetPlanner;
-import com.odde.bbuddy.budget.MonthlyBudgetRepo;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class AccountStatusControllerTest {
 
-
+    AccountStatusImpl service = mock(AccountStatusImpl.class);
+    Model model = mock(Model.class);
+    AccountStatusController controller = new AccountStatusController(service);
 
     @Test
-    public void print_date_fail_msg(){
+    public void getAccountStatus_use_AccountStatus_view(){
+        assertEquals("AccountStatus", controller.getAccountStatus(model));
+    }
+
+    @Test
+    public void getAccountStatus_display_account_status_from_service() {
+        ArrayList<AccountStatus> accountStatusList = new ArrayList<>();
+        when(service.getAccountStatus()).thenReturn(accountStatusList);
+
+        controller.getAccountStatus(model);
+
+        verify(model).addAttribute("accountStatusList", accountStatusList);
+    }
+
+    @Test
+    public void print_date_fail_msg_when_input_a_date_later_than_today(){
         // arrage
-        AccountStatusImpl service = mock(AccountStatusImpl.class);
-        Model model = mock(Model.class);
         AccountStatusController accountStatusController = new AccountStatusController(service);
 
         //action
