@@ -15,10 +15,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-public class getAccountStatusController {
+public class AccountStatusController {
+
+
+    private AccountStatusImpl accountStatusSerivce;
 
     @Autowired
-    private AccountStatusImpl accountStatusSerivce;
+    public AccountStatusController(AccountStatusImpl accountStatusSerivce) {
+         this.accountStatusSerivce = accountStatusSerivce;
+    }
 
     @RequestMapping("/get_accountStatus")
     public String getAccountStatus(Model model) {
