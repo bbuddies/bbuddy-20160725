@@ -1,15 +1,13 @@
 package com.odde.bbuddy.accountStatus;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "account_status")
 @Getter
+@Setter
 @RequiredArgsConstructor
 @NoArgsConstructor
 public class AccountStatus {

@@ -28,12 +28,19 @@ public class getAccountStatusController {
     }
 
     @RequestMapping("/save_accountStatus")
-    public String saveAccountStatus(AccountStatus accountStatus, Model model) {
-
+    public String saveAccountStatus(@RequestParam("date")String date,
+                                    @RequestParam("remark")String remark,
+                                    @RequestParam("amount")String amount,
+                                    @RequestParam("amount_type")String amount_type,Model model) {
+        AccountStatus accountStatus = new AccountStatus();
+        accountStatus.setDate(date);
+        accountStatus.setRemark(remark);
+        accountStatus.setAmount(amount);
+        accountStatus.setAmount_type(amount_type);
 
         accountStatusSerivce.saveAccountStatus(accountStatus);
 
-        return "/get_accountStatus";
+        return "redirect:/get_accountStatus";
 
     }
 
