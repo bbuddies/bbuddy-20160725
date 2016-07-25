@@ -19,8 +19,6 @@ public class AccountStatusImpl {
     public Iterable<AccountStatus> getAccountStatus(){
 
         Iterable<AccountStatus> iterable  = accountStatusRepo.findAll();
-        boolean flag = iterable.iterator().hasNext();
-        System.out.println(flag);
         return iterable;
     }
 

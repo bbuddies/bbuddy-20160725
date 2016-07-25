@@ -1,5 +1,6 @@
 package com.odde.bbuddy.accountStatus.controller;
 
+import com.odde.bbuddy.accountStatus.AccountStatus;
 import com.odde.bbuddy.accountStatus.AccountStatusImpl;
 import com.odde.bbuddy.budget.MonthlyBudgetPlanner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,16 @@ public class getAccountStatusController {
         model.addAttribute("accountStatusList", accountStatusSerivce.getAccountStatus());
 
         return "AccountStatus";
+    }
+
+    @RequestMapping("/get_accountStatus")
+    public String saveAccountStatus(AccountStatus accountStatus, Model model) {
+
+
+        accountStatusSerivce.saveAccountStatus(accountStatus);
+
+        return "/get_accountStatus";
+
     }
 
 }
