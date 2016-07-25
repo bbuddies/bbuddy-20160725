@@ -17,7 +17,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 
 
         // add AccountStatus viewController
-        //registry.addViewController("/get_accountStatus").setViewName("accountStatus");
+        registry.addViewController("/get_accountStatus").setViewName("AccountStatus");
     }
 
 }

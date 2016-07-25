@@ -23,7 +23,7 @@ public class getAccountStatusController {
 
         model.addAttribute("accountStatusList", accountStatusSerivce.getAccountStatus());
 
-        return "accountStatus";
+        return "AccountStatus";
     }
 
 }

@@ -18,13 +18,13 @@ public class AccountStatus {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NonNull
     private String date;
 
     private String remark;
 
     private String amount;
 
-    @Column(name = "amount_type")
-    private String amountType;
+    private String amount_type;
 
 }
