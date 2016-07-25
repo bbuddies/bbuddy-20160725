@@ -15,22 +15,21 @@ import java.util.Date;
 @Controller
 public class getAccountStatusController {
 
-    @Autowired
     private AccountStatusImpl accountStatusSerivce;
+
+    @Autowired
+    public getAccountStatusController(AccountStatusImpl accountStatusSerivce) {
+        this.accountStatusSerivce = accountStatusSerivce;
+    }
 
     @RequestMapping("/get_accountStatus")
     public String getAccountStatus(Model model) {
-
-
         model.addAttribute("accountStatusList", accountStatusSerivce.getAccountStatus());
-
         return "AccountStatus";
     }
 
     @RequestMapping("/save_accountStatus")
     public String saveAccountStatus(AccountStatus accountStatus, Model model) {
-
-
         accountStatusSerivce.saveAccountStatus(accountStatus);
 
         return "/get_accountStatus";
