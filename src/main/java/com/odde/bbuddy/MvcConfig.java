@@ -14,6 +14,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/hello").setViewName("hello");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/add_budget_for_month").setViewName("add_budget_for_month");
+
+
+        // add AccountStatus viewController
+        //registry.addViewController("/get_accountStatus").setViewName("accountStatus");
     }
 
 }

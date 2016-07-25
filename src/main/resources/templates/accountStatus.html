@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Bbuddy</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>date</th>
+        <th>remark</th>
+        <th>amount</th>
+        <th>amount_type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="as : ${accountStatusList}">
+        <td th:text="${{as.id}}">13/01/2011</td>
+        <td th:text="${{as.date}}">13/01/2011</td>
+        <td th:text="${{as.remark}}">13/01/2011</td>
+        <td th:text="${{as.amount}}">13/01/2011</td>
+        <td th:text="${{as.amountType}}">13/01/2011</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
