@@ -22,7 +22,7 @@ public class AccountStatusController {
 
     @Autowired
     public AccountStatusController(AccountStatusImpl accountStatusSerivce, SystemTime systemTime) {
-         this.accountStatusSerivce = accountStatusSerivce;
+        this.accountStatusSerivce = accountStatusSerivce;
         this.systemTime = systemTime;
     }
 
