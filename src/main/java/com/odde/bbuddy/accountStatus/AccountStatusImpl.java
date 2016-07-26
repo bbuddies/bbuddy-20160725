@@ -31,7 +31,7 @@ public class AccountStatusImpl {
         return map;
     }
 
-    private int getAccountIncome(Iterator<AccountStatus> iterator){
+    public int getAccountIncome(Iterator<AccountStatus> iterator){
         int income = 0;
         while (iterator.hasNext()){
             AccountStatus accountStatus = iterator.next();
@@ -42,7 +42,7 @@ public class AccountStatusImpl {
         return income;
     }
 
-    private int getAccountOutcome(Iterator<AccountStatus> iterator){
+    public int getAccountOutcome(Iterator<AccountStatus> iterator){
         int outcome = 0;
         while (iterator.hasNext()){
             AccountStatus accountStatus = iterator.next();

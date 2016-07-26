@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -32,13 +34,22 @@ public class AccountStatusControllerTest {
 
     @Test
     public void getAccountStatus_display_account_status_from_service() {
+<<<<<<< HEAD
         ArrayList<AccountStatus> accountStatusList = new ArrayList<>();
         //when(service.getAccountStatus()).thenReturn(accountStatusList);
+=======
+
+        Map<String,Object> accountStatusMap = new HashMap<>();
+        when(service.getAccountStatus()).thenReturn(accountStatusMap);
+>>>>>>> 56343f379723d8b8fab4d36418496299fd24a608
 
         controller.getAccountStatus(model);
 
-        verify(model).addAttribute("accountStatusList", accountStatusList);
+        verify(model).addAttribute("accountStatusMap", accountStatusMap);
     }
+
+
+
 
     @Test
     public void print_date_fail_msg_when_input_a_date_later_than_today() throws ParseException {
