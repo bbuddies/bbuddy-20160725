@@ -28,7 +28,7 @@ public class AccountStatusController {
 
     @RequestMapping("/get_accountStatus")
     public String getAccountStatus(Model model) {
-        model.addAttribute("accountStatusList", accountStatusSerivce.getAccountStatus());
+        model.addAttribute("accountStatusMap", accountStatusSerivce.getAccountStatus());
         return "AccountStatus";
     }
 
