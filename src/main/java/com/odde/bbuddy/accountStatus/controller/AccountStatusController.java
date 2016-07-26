@@ -2,6 +2,7 @@ package com.odde.bbuddy.accountStatus.controller;
 
 import com.odde.bbuddy.accountStatus.AccountStatus;
 import com.odde.bbuddy.accountStatus.AccountStatusImpl;
+import com.odde.bbuddy.accountStatus.SystemTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +18,12 @@ public class AccountStatusController {
 
 
     private AccountStatusImpl accountStatusSerivce;
+    private SystemTime systemTime;
 
     @Autowired
-    public AccountStatusController(AccountStatusImpl accountStatusSerivce) {
+    public AccountStatusController(AccountStatusImpl accountStatusSerivce, SystemTime systemTime) {
          this.accountStatusSerivce = accountStatusSerivce;
+        this.systemTime = systemTime;
     }
 
     @RequestMapping("/get_accountStatus")
@@ -42,7 +45,7 @@ public class AccountStatusController {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        if(date1.after(new Date())){
+        if(date1.after(systemTime.getNow())){
             model.addAttribute("msg","Date must be no later than today!");
             return "save_accountStatus";
         }
