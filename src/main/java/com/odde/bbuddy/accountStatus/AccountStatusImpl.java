@@ -13,8 +13,13 @@ import java.util.logging.Logger;
 @Service
 public class AccountStatusImpl {
 
-    @Autowired
+
     private AccountStatusRepo accountStatusRepo;
+
+    @Autowired
+    public AccountStatusImpl(AccountStatusRepo accountStatusRepo){
+        this.accountStatusRepo=accountStatusRepo;
+    }
 
     public Iterable<AccountStatus> getAccountStatus(){
 
