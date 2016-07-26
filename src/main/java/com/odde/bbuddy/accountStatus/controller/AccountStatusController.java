@@ -6,9 +6,11 @@ import com.odde.bbuddy.accountStatus.SystemTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -47,6 +49,18 @@ public class AccountStatusController {
         }
         if(date1.after(systemTime.getNow())){
             model.addAttribute("msg","Date must be no later than today!");
+            return "save_accountStatus";
+        }
+
+        BigDecimal amt = null;
+        try {
+            amt = BigDecimal.valueOf(Double.valueOf(amount));
+        }catch (Exception e){
+            model.addAttribute("msg","amount change error!");
+            return "save_accountStatus";
+        }
+        if(amt.compareTo(BigDecimal.valueOf(0))==-1){
+            model.addAttribute("msg","amount is error !");
             return "save_accountStatus";
         }
 
