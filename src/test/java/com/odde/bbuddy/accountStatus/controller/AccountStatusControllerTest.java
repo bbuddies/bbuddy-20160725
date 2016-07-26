@@ -14,10 +14,6 @@ import static org.mockito.Mockito.when;
 
 public class AccountStatusControllerTest {
 
-    //GIVEN a later date input
-    //WHEN  call controller using this invalid date
-    //THEN  1. msg print 2. view name = create page 3. save is not called
-
 
     AccountStatusImpl service = mock(AccountStatusImpl.class);
     Model model = mock(Model.class);
