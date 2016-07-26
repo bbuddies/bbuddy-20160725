@@ -18,17 +18,17 @@
     </thead>
     <tbody>
     <tr th:each="as : ${accountStatusMap.list}">
-        <td th:text="${{as.id}}">0</td>
-        <td th:text="${{as.date}}">2016-07-25</td>
-        <td th:text="${{as.remark}}">remark</td>
-        <td th:text="${{as.amount}}">0</td>
-        <td th:text="${{as.amount_type}}">收入</td>
+        <td id="id" th:text="${{as.id}}">0</td>
+        <td id="date" th:text="${{as.date}}">2016-07-25</td>
+        <td id="remark" th:text="${{as.remark}}">remark</td>
+        <td id="amount" th:text="${{as.amount}}">0</td>
+        <td id="amountType" th:text="${{as.amount_type}}">收入</td>
     </tr>
     <tr>
-        <td th:text="'Total Income:' + ${accountStatusMap.income}">0</td>
+        <td id="income" th:text="'Total Income:' + ${accountStatusMap.income}">0</td>
     </tr>
     <tr>
-        <td th:text="'Total Outcome:' + ${accountStatusMap.outcome}">0</td>
+        <td id="outcome" th:text="'Total Outcome:' + ${accountStatusMap.outcome}">0</td>
     </tr>
     </tbody>
 </table>

@@ -33,7 +33,7 @@ public class AccountStatusControllerTest {
     @Test
     public void getAccountStatus_display_account_status_from_service() {
         ArrayList<AccountStatus> accountStatusList = new ArrayList<>();
-        when(service.getAccountStatus()).thenReturn(accountStatusList);
+        //when(service.getAccountStatus()).thenReturn(accountStatusList);
 
         controller.getAccountStatus(model);
 
