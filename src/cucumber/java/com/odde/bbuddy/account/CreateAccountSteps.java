@@ -1,6 +1,7 @@
 package com.odde.bbuddy.account;
 
 import com.odde.bbuddy.Application;
+import com.odde.bbuddy.account.domain.Account;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
@@ -40,7 +41,6 @@ public class CreateAccountSteps {
 
     @When("^create a valid account with account_name \"([^\"]*)\" balance (\\d+)$")
     public void create_a_valid_account_with_account_name_balance(String accountName, int balance) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
 
         driver.get("localhost:8080/create_account");
         WebElement accountNameTxt = driver.findElement(By.id("accountName"));
@@ -50,11 +50,14 @@ public class CreateAccountSteps {
         balanceTxt.submit();
     }
 
-    @Then("^display the account information with above name and balance$")
-    public void display_the_account_information_with_above_name_and_balance() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    @Then("^the account information will be saved as name \"([^\"]*)\" balance (\\d+)$")
+    public void the_account_information_will_be_saved_as_name_balance(String accountName, int balance) throws Throwable {
+
         long count = accountRepo.count();
+        Account account = accountRepo.findAll().iterator().next();
         assertEquals(1,count);
+        assertEquals(accountName,account.getAccountName());
+        assertEquals(balance,account.getBalance());
         driver.quit();
     }
 
