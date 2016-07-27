@@ -8,6 +8,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AccountService {
+    private AccountRepo accountRepo;
+
+    public AccountService(AccountRepo accountRepo) {
+
+        this.accountRepo = accountRepo;
+    }
+
     public void saveAccount(Account account) {
+        accountRepo.save(account);
     }
 }
