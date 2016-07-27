@@ -34,14 +34,11 @@ public class AccountStatusControllerTest {
 
     @Test
     public void getAccountStatus_display_account_status_from_service() {
-<<<<<<< HEAD
         ArrayList<AccountStatus> accountStatusList = new ArrayList<>();
         //when(service.getAccountStatus()).thenReturn(accountStatusList);
-=======
 
         Map<String,Object> accountStatusMap = new HashMap<>();
         when(service.getAccountStatus()).thenReturn(accountStatusMap);
->>>>>>> 56343f379723d8b8fab4d36418496299fd24a608
 
         controller.getAccountStatus(model);
 
