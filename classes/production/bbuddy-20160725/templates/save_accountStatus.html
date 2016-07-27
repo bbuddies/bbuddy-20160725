@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Bbuddy</title>
+</head>
+<body>
+
+<form th:action="@{/save_accountStatus}" method="post">
+    <div><label>date (format:yyyy-mm-dd): <input type="text" name="date"/> </label></div>
+    <div><label>remark: <input type="text" name="remark"/> </label></div>
+    <div><label>amount: <input type="text" name="amount"/> </label></div>
+    <div><label>amount_type: <input type="text" name="amount_type"/> </label></div>
+
+    <div><input type="submit" value="create"/></div>
+
+    <p th:text="'error msg :' + ${msg}" />
+</form>
+</body>
+</html>

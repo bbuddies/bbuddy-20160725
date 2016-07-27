@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Bbuddy</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>date</th>
+        <th>remark</th>
+        <th>amount</th>
+        <th>amount_type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="as : ${accountStatusMap.list}">
+        <td id="id" th:text="${{as.id}}">0</td>
+        <td id="date" th:text="${{as.date}}">2016-07-25</td>
+        <td id="remark" th:text="${{as.remark}}">remark</td>
+        <td id="amount" th:text="${{as.amount}}">0</td>
+        <td id="amountType" th:text="${{as.amount_type}}">收入</td>
+    </tr>
+    <tr>
+        <td id="income" th:text="'Total Income:' + ${accountStatusMap.income}">0</td>
+    </tr>
+    <tr>
+        <td id="outcome" th:text="'Total Outcome:' + ${accountStatusMap.outcome}">0</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

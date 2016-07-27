@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Bbuddy</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+
+<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+
+<!--add AccountStatus view controller-->
+<p>Click <a th:href="@{/get_accountStatus}">here</a> to see account status.</p>
+
+<p>Click <a th:href="@{/create_accountStatus}">here</a> to create a record.</p>
+
+<p>Click <a th:href="@{/create_account}">here</a> to create a new account.</p>
+</body>
+</html>
